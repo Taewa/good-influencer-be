@@ -1,6 +1,8 @@
 import { MongoClient } from "mongodb";
+import 'dotenv/config'
 
-const connectionString = "mongodb://localhost:27017";
+const { MONGO_DB_CONNECTION } = process.env;
+const connectionString = MONGO_DB_CONNECTION;
 const client = new MongoClient(connectionString);
 let conn;
 
@@ -11,6 +13,6 @@ try {
     console.error(e);
 }
 
-let db = conn.db("GoodInfluencer");
+let db = conn.db("MongodbTST");
 
 export default db;
