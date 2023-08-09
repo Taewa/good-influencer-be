@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start-legacy": "PORT=8081 nodemon ./bin/www",
-    "start": "PORT=8888 nodemon ./app.mjs"
+    "start": "PORT=8888 nodemon ./app.mjs",
+    "vercel build": "echo deploying on Vercel:: Good Influencer Backend"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
