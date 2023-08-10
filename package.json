@@ -2,9 +2,10 @@
   "name": "server",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "start-legacy": "PORT=8081 nodemon ./bin/www",
-    "start": "PORT=8888 nodemon ./app.mjs",
+    "start": "PORT=8888 nodemon ./index.js",
     "vercel build": "echo deploying on Vercel:: Good Influencer Backend"
   },
   "dependencies": {
