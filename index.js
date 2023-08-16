@@ -28,21 +28,6 @@ app.use(cookieParser());
 app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// cors setting on vecel. seems to be cors() is not enough
-// app.use((req, res, next) => {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-//   );
-//   if (req.method == "OPTIONS") {
-//     res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
-//     return res.status(200).json({});
-//   }
-
-//   next();
-// });
-
 // add influencer APIs
 app.use('/influencer', influencerRouter);
 
