@@ -14,7 +14,7 @@ router.get('/', async (req, res, next) => {
   } else {
     return res
       .status(404)
-      .json({error: 'not found'});
+      .json({error: 'address not found'});
   }
   
 });
@@ -53,6 +53,12 @@ router.post('/register', async (req, res, next) => {
     // TODO: error handling
     console.error('Error:', err);
   }
+});
+
+router.get('/test', async (req, res, next) => {
+  return res
+    .status(200)
+    .json({test: true});
 });
 
 export default router;
