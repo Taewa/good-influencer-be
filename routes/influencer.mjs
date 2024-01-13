@@ -16,7 +16,21 @@ router.get('/', async (req, res, next) => {
       .status(404)
       .json({error: 'address not found'});
   }
-  
+});
+
+router.get('/list', async (req, res, next) => {
+  const collection = db.collection("Influencers");
+  const results = await collection.find().toArray();
+
+  if (results) {
+    return res
+      .status(200)
+      .json(results);
+  } else {
+    return res
+      .status(500)
+      .json({error: 'getting influencer list error'});
+  }
 });
 
 router.post('/register', async (req, res, next) => {
